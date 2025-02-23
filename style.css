@@ -1,0 +1,579 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+/*header*/
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+/*Logo styling */
+.logo a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.7em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.site-description {
+    font-size: 0.8em;
+    color: #777;
+    display: block;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Стили для кнопки "гамбургер-меню" */
+.burger-menu {
+    display: block;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s;
+    color: #555;
+}
+.burger-menu:hover {
+    color: #3498db;
+}
+
+/* Стили для панели навигации */
+.nav-items {
+    display: none; /* Скрываем изначально */
+    flex-direction: column;
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0;
+    left: 0;
+    width: 250px; /* Ширина панели навигации */
+    height: 100%; /* Высота на весь экран */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Поверх всего */
+    transform: translateX(-100%); /* Скрываем за левым краем */
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; /* Для скролла, если контента много */
+}
+
+.nav-items a {
+    padding: 10px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 1px solid #eee; /* Разделитель между ссылками */
+}
+
+.nav-items a:last-child {
+    border-bottom: none; /* Убираем разделитель у последнего элемента */
+}
+
+.nav-items a:hover {
+    background-color: #f2f2f2;
+    color: #3498db;
+}
+
+/* Активация панели навигации */
+.nav-items.active {
+    display: flex; /* Показываем */
+    transform: translateX(0); /* Выдвигаем на экран */
+}
+
+/* Стили для кнопки закрытия */
+.close-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s;
+}
+
+.close-menu:hover {
+    color: #e74c3c;
+}
+
+/* Затемнение фона при открытом меню */
+body.menu-open::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
+    z-index: 999; /* Под панелью, но над остальным контентом */
+}
+
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #555;
+    transition: color 0.3s;
+}
+.theme-toggle .fa-sun {
+    color: yellow; /* Желтый цвет для солнышка */
+}
+
+.theme-toggle:hover {
+    color: #777;
+}
+
+/*Page content*/
+main {
+    max-width: 1230px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/*Home section */
+.home {
+    text-align: center;
+}
+
+.home h1 {
+    font-size: 2.5em;
+    color: #3498db;
+    margin-bottom: 10px;
+}
+
+.home p {
+    font-size: 1.1em;
+
+}
+
+/*Subjects section layout*/
+#subjects {
+    text-align: center;
+}
+
+#subjects h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.subjects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/*Styling Subject Card*/
+.subject-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-decoration: none; /* Убираем подчеркивание */
+    color: inherit; /* Наследуем цвет текста от родителя */
+    /* Clip corners */
+}
+
+.subject-body .fa-calculator{
+color: #2e60cc;
+}
+.subject-body .fa-code{
+    color: #33cc2e;
+}
+.subject-body .fa-history{
+    color: #fae84a;
+}
+.subject-body .fa-font{
+color: #e62828;
+}
+.subject-body .fa-flask{
+    color: #8d2ecc;
+}
+.subject-body .fa-shield-alt{
+    color: #bf2ecc;
+}
+
+
+
+.subject-header img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    transition: transform 0.5s ease; /* Добавляем плавный переход для transform */
+}
+
+
+.subject-card:hover .subject-header img {
+    transform: scale(1.1);  /* Увеличиваем масштаб фотографии при hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.subject-card:hover .subject-body i {
+    animation: pulsate 2.5s ease-in-out;
+}
+
+@keyframes pulsate {
+    0% { transform: scale(1); }
+    25%{ transform: scale(0.8);  }
+    50% { transform: scale(-1.15); }
+    100% { transform: scale(1); }
+}
+
+.subject-color-bar {
+    height: 8px;  /* Толщина полоски */
+    width: 100%;
+    /* background-color: #2e60cc; */ /* Цвет полоски (можно задавать инлайново или через классы) */
+    border-radius: 0 0 0px 0px; /* Закругление только нижних углов */
+}
+
+/*Card header*/
+.subject-header {
+    height: 180px;
+    overflow: hidden;
+    /* Добавил overflow: hidden; */
+    position: relative;
+    /* Чтобы можно было позиционировать псевдоэлемент */
+
+    /* Math color*/
+
+
+}
+
+.subject-header img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+
+    /* Убираем отступ у картинок */
+}
+
+
+/*Card content*/
+.subject-body {
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 220px;
+    /* Fixed height*/
+}
+
+.subject-body i {
+    margin-right: 8px;
+    color: #777;
+    /* Color to the icons*/
+}
+
+.subject-body h3 {
+    font-size: 1.4em;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.subject-body p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.4;
+}
+
+/*Progrees circle*/
+.progress-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ecf0f1;
+    /* Light background*/
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+
+    /* Add the place between*/
+    align-self: flex-end;
+}
+
+
+/*Content of subject*/
+#subject-content {
+    text-align: left;
+}
+
+#topic-list {
+    margin-top: 20px;
+}
+
+#topic-list a {
+    display: block;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+#topic-list a:hover {
+    background-color: #e0e0e0;
+}
+
+/*The form of connection */
+#contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #555;
+}
+
+/*Underground part*/
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    max-width: 100%;
+}
+
+/*The classes to hide and show */
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/*Change the theme*/
+.dark-mode {
+    background-color: #111111;
+    color: #fff;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: #fff;
+}
+.dark-mode .progress-circle{
+    background-color: #2c2c2c;
+    color: #fff;
+}
+
+.dark-mode section {
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+    /* Subtle white shadow*/
+}
+
+.dark-mode #topic-list a {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode #topic-list a:hover {
+    background-color: #555;
+}
+
+.dark-mode #contact-form input,
+.dark-mode #contact-form textarea {
+    border-color: #555;
+    background-color: #333;
+    color: #fff;
+}
+.dark-mode header{
+    background-color: #111;
+}
+.dark-mode a {
+    color: #ccc;
+}
+.dark-mode p { 
+    color:#ddd;
+}
+.dark-mode .subject-card{
+    background-color:#222;
+}
+
+.dark-mode footer {
+    background-color: #111;
+}
+/* Dark Theme Support */
+.dark-mode .burger-menu {
+    color: #ddd;
+}
+
+.dark-mode .burger-menu:hover {
+    color: #fff;
+}
+
+.dark-mode .nav-items {
+    background-color: #333;
+    box-shadow: 2px 0px 5px rgba(255, 255, 255, 0.1);
+    color: #fff; /* Color for text within the nav */
+}
+
+.dark-mode .nav-items a {
+    color: #ddd;
+    border-bottom: 1px solid #555; /* Darker divider */
+}
+
+.dark-mode .nav-items a:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/*Switch themes */
+.theme-toggle {
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.theme-toggle:hover {
+    color: #ddd;
+}
+
+/*Quiz styling */
+#quiz-container {
+    margin-top: 20px;
+}
+
+#quiz {
+    margin-bottom: 20px;
+}
+
+/*Show the results*/
+#results {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#percentage {
+    font-weight: bold;
+}
+
+/*Добавляем стили для выпадающего меню*/
+.nav-items.active {
+    display: flex;
+}
+
+/*Responsive design*/
+/*-----------------------------------Mobile design------------------------------------------*/
+@media (max-width: 768px) {
+
+        nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .burger-menu {
+            display: block; /* Показываем кнопку на маленьких экранах */
+        }
+        .logo {
+            margin-bottom: 10px;
+        }
+    
+        .subjects-grid {
+            grid-template-columns: 1fr;
+            /* One column on smaller screns*/
+        }
+    
+        .subject-card {
+            padding: 0px;
+            text-align: center;
+        }
+    
+        .subject-body {
+            height: auto;
+            /* Expand height to fit items*/
+        }
+    
+        .progress-circle {
+            align-self: center;
+            /* Center circle*/
+        }
+    
+}
+/*-----------------------------------Mobile design landscape------------------------------------------*/
+@media (max-width: 992px) and (orientation: landscape) {
+        .subjects-grid {
+          grid-template-columns: repeat(2, 1fr); /* Два столбца в альбомной ориентации на планшетах */
+        }
+
+  .nav-items {
+    flex-direction: row; /* Возвращаем навигацию в горизонтальное положение */
+    margin-top: 0;
+  }
+
+  .nav-items a {
+    margin: 0 10px; /* Уменьшаем отступы между элементами навигации */
+  }
+}
+/*-----------------------------------Tablet design------------------------------------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+    .subjects-grid {
+        grid-template-columns: repeat(2, 1fr); /* Два столбца на планшетах */
+    }   
+}

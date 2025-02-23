@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Конспекты по основным школьным предметам. Математика, информатика, история, русский язык, физика, ОБЖ.">
+    <title> конспекты</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <script src="vidio.js"></script>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="./"><img src="/img/acetone-2025223-205340-77.png" alt="Логотип">Все конспекты</a>
+                <span class="site-description">Ваш помощник в учебе</span>
+            </div>
+            <button class="burger-menu">☰</button>  <!-- Кнопка гамбургер-меню -->
+            <a href="./"> 
+            <button class="close-menu">&times;</button> <!-- Кнопка закрытия -->
+            </a>
+            <div class="nav-items">
+                <a href="index.html"><i class="fa fa-home"></i> Главная</a>
+                <a href="math.html"><i class="fa fa-calculator"></i> Математика</a>
+                <a href="informatics.html"><i class="fa fa-code"></i> Информатика</a>
+                <a href="history.html"><i class="fa fa-history"></i> История</a>
+                <a href="russian.html"><i class="fa fa-font"></i> Русский язык</a>
+                <a href="physics.html"><i class="fa fa-flask"></i> Физика</a>
+                <a href="safety.html"><i class="fa fa-shield-alt"></i> ОБЖ</a>
+            </div>
+            <div class="theme-toggle">
+                <i class="fa-solid fa-moon"></i>
+            </div>
+
+        </nav>
+    </header>
+    <main>
+        <div class="home">
+            <h1>Добро пожаловать в мои конспекты!</h1>
+            <p>Ваш персональный помощник в обучении. Здесь вы найдете все необходимые материалы для успешной учебы.</p>
+        </div>
+<div class="home">
+    <h2>Предметы:</h2>
+    </div>
+
+            
+            <div class="subjects-grid">
+
+                <a href="math.html" class="subject-card">
+                    <div class="subject-header">
+                        <img src="./img/photo-1635070041078-e363dbe005cb.avif" alt="Математика">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #2e60cc;"></div>  <!-- Цветная полоска -->
+                    <div class="subject-body">
+                        <i class="fa fa-calculator"></i>
+                        <h3>Математика</h3>
+                        <p>Формулы, теоремы и решения задач.</p>
+                        <div class="progress-circle">
+                            <span>65%</span>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="subject-card" data-subject="math">
+                    <div class="subject-header">
+                        <img src="./img/info.avif" alt="Математика">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #33cc2e;"></div>
+                    <div class="subject-body">
+                        <i class="fa fa-code"></i>
+                        <h3>Информатика</h3>
+                        <p>Алгоритмы, программирование и компьютерные науки.</p>
+                        <div class="progress-circle">
+                            <span>45%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat the structure to create a .subject-card for history, russian, physics and safety subjects-->
+                <!-- Example:  -->
+                <div class="subject-card" data-subject="math">
+                    <div class="subject-header">
+                        <img src="./img/history.avif" alt="Математика">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #fae84a;"></div>
+                    <div class="subject-body">
+                        <i class="fa fa-history"></i>
+                        <h3>История</h3>
+                        <p>Даты, события и исторические личности.</p>
+                        <div class="progress-circle">
+                            <span>80%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-subject="math">
+                    <div class="subject-header">
+                        <img src="./img/rys.avif" alt="Математика">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #e62828;"></div>
+                    <div class="subject-body">
+                        <i class="fa fa-font"></i>
+                        <h3>Русский язык</h3>
+                        <p>Правила, орфография и пунктуация.</p>
+                        <div class="progress-circle">
+                            <span>70%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-subject="math">
+                    <div class="subject-header">
+                        <img src="./img/fizika.avif" alt="Математика">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #8d2ecc;"></div>
+                    <div class="subject-body">
+                        <i class="fa fa-flask"></i>
+                        <h3>Физика</h3>
+                        <p>Формулы и конспекты</p>
+                        <div class="progress-circle">
+                            <span>70%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subject-card" data-subject="math">
+                    <div class="subject-header">
+                        <img src="./img/OBZR.avif" alt="Математика">
+                    </div>
+                    <div class="subject-color-bar" style="background-color: #bf2ecc;"></div>
+                    <div class="subject-body">
+                        <i class="fa fa-shield-alt"></i>
+                        <h3>ОБЖ</h3>
+                        <p>Основы безопасности жизнедеятельности.</p>
+                        <div class="progress-circle">
+                            <span>90%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <section id="subject-content" class="hidden">
+            <h2 id="subject-title"></h2>
+            <div id="topic-list">
+                <!-- Темы будут загружаться сюда -->
+            </div>
+            <div id="quiz-container" class="hidden">
+                <!-- Контент для теста -->
+                <h2>Тест на знания</h2>
+                <div id="quiz"></div>
+                <button id="submit">Показать результат</button>
+                <div id="results"></div>
+                <p>Процент прохождения: <span id="percentage">0%</span></p>
+
+            </div>
+
+            <button id="back-to-subjects">Вернуться к списку предметов</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Все конспекты</p>
+        <p>Сейчас конспектов нету, работаю над визуалом</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
